@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <HBox spacing="10">
+        <VBox>
+            <Label text="Appointment ID:" />
+            <TextField fx:id="appointmentIdField" alignment="CENTER" disable="true" editable="false" text="Auto-generated" />
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <VBox>
+            <Label text="Title:" />
+            <TextField fx:id="titleField" />
+        </VBox>
+        <VBox>
+            <Label text="Description:" />
+            <TextField fx:id="descriptionField" />
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <VBox>
+            <Label text="Location:" />
+            <TextField fx:id="locationField" />
+        </VBox>
+        <VBox>
+            <Label text="Type:" />
+            <TextField fx:id="typeField" />
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <VBox>
+            <Label text="Start Date and Time:" />
+            <DatePicker fx:id="startDatePicker" />
+            <TextField fx:id="startTimeField" promptText="HH:MM" />
+        </VBox>
+        <VBox>
+            <Label text="End Date and Time:" />
+            <DatePicker fx:id="endDatePicker" />
+            <TextField fx:id="endTimeField" promptText="HH:MM" />
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <VBox>
+            <Label text="Contact:" />
+            <ComboBox fx:id="contactComboBox" />
+        </VBox>
+        <VBox>
+            <Label text="Customer ID:" />
+            <ComboBox fx:id="customerIdComboBox" />
+        </VBox>
+        <VBox>
+            <Label text="User ID:" />
+            <ComboBox fx:id="userIdComboBox" />
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <Button onAction="#handleAddAppointment" text="Add" />
+        <Button onAction="#handleUpdateAppointment" text="Update" />
+        <Button onAction="#handleDeleteAppointment" text="Delete" />
+        <Button onAction="#handleClearFields" text="Clear Fields" />
+    </HBox>
+
+    <Button onAction="#handleBack" text="Back To Customer Management" />
+
+    <VBox>
+        <RadioButton fx:id="allViewRadio" text="All View" toggleGroup="$toggleGroup" />
+        <RadioButton fx:id="monthViewRadio" text="Month View" toggleGroup="$toggleGroup" />
+        <RadioButton fx:id="weekViewRadio" text="Week View" toggleGroup="$toggleGroup" />
+    </VBox>
+
+    <TableView fx:id="appointmentTable" prefHeight="301.0" prefWidth="796.0">
+        <columns>
+            <TableColumn fx:id="appointmentIdColumn" prefWidth="96.99999618530273" text="Appointment ID" />
+            <TableColumn fx:id="appointmentTitleColumn" prefWidth="37.399993896484375" text="Title" />
+            <TableColumn fx:id="appointmentDescriptionColumn" prefWidth="80.20001220703125" text="Description" />
+            <TableColumn fx:id="appointmentLocationColumn" prefWidth="75.20002746582031" text="Location" />
+            <TableColumn fx:id="appointmentContactColumn" prefWidth="54.20001220703125" text="Contact" />
+            <TableColumn fx:id="appointmentTypeColumn" prefWidth="41.4000244140625" text="Type" />
+            <TableColumn fx:id="appointmentStartColumn" prefWidth="127.0" text="Start Date and Time" />
+            <TableColumn fx:id="appointmentEndColumn" prefWidth="113.60003662109375" text="End Date and Time" />
+            <TableColumn fx:id="appointmentCustomerIdColumn" minWidth="0.0" prefWidth="76.2000732421875" text="Customer ID" />
+            <TableColumn fx:id="appointmentUserIdColumn" prefWidth="104.5999755859375" text="User ID" />
+        </columns>
+    </TableView>
+</VBox>

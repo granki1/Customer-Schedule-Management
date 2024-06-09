@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.ReportsController" fx:id="rootVBox" spacing="10" alignment="CENTER">
+    <Label text="Reports" style="-fx-font-size: 24px;"/>
+    <Button text="Customer Appointments by Type and Month" onAction="#generateCustomerAppointmentFrequencyReport"/>
+    <HBox spacing="10">
+        <Label text="Select Contact for Contact Report:"/>
+        <ComboBox fx:id="contactComboBox" onAction="#generateScheduleForSelectedContactReport"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Select Country for Customer by Country Report:"/>
+        <ComboBox fx:id="countryComboBox" onAction="#generateCustomerByCountryReport"/>
+    </HBox>
+    <Button text="Back to Customer Management" onAction="#handleBackToCustomerManagement"/>
+    <TableView fx:id="reportTableView">
+        <columns>
+            <TableColumn text="Column 1"/>
+            <TableColumn text="Column 2"/>
+            <TableColumn text="Column 3"/>
+            <TableColumn text="Column 4"/>
+            <TableColumn text="Column 5"/>
+            <TableColumn text="Column 6"/>
+        </columns>
+    </TableView>
+</VBox>
